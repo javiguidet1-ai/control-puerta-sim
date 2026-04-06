@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Sistema de Control de Acceso - Puerta de Lobres",
   "scripts": {
-    "install:all": "cd backend && npm install && cd ../frontend && npm install",
-    "build": "cd frontend && npx vite build",
-    "start": "cd backend && node src/index.js",
-    "dev": "cd backend && node src/index.js"
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "build": "npm run install:all && npm run build --prefix frontend",
+    "start": "npm start --prefix backend"
   },
   "engines": {
     "node": ">=18.0.0"
