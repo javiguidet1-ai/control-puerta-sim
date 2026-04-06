@@ -1,4 +1,4 @@
-const { DatabaseSync } = require('node:sqlite');
+const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
 
@@ -9,7 +9,7 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const db = new DatabaseSync(DB_PATH);
+const db = new Database(DB_PATH);
 
 // Activar WAL mode y foreign keys
 db.exec("PRAGMA journal_mode = WAL");
