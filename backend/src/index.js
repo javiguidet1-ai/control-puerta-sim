@@ -9,11 +9,13 @@ const PORT = process.env.PORT || 3001;
 
 // ─── SEGURIDAD: Headers HTTP ─────────────────────────────────────────────────
 app.use(helmet({
+  hsts: false, // ¡Crucial para HTTP puro!
   contentSecurityPolicy: {
     directives: {
       ...helmet.contentSecurityPolicy.getDefaultDirectives(),
       "script-src": ["'self'", "'unsafe-inline'"],
-      "img-src": ["'self'", "data:", "https:"]
+      "img-src": ["'self'", "data:", "https:"],
+      "upgrade-insecure-requests": null // Evita que pase de http a https
     }
   }
 }));
