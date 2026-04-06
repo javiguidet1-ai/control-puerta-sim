@@ -1,0 +1,14 @@
+{
+  "name": "puerta-de-lobres",
+  "version": "1.0.0",
+  "description": "Sistema de Control de Acceso - Puerta de Lobres",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npx vite build",
+    "start": "cd backend && node src/index.js",
+    "dev": "cd backend && node src/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
